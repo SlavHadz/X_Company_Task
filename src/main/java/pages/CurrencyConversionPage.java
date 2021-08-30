@@ -21,7 +21,6 @@ public class CurrencyConversionPage {
 
     public void NavigateTo() throws InterruptedException {
         _driver.navigate().to(pageUrl);
-        Thread.sleep(5000);
     }
 
     public void FillInput(By selector, String text) {

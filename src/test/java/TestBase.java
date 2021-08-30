@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 public class TestBase {
     protected WebDriver _driver;
-    private WebDriverWait _wait;
+    protected WebDriverWait _wait;
     CurrencyConversionPage currencyConversionPage;
 
     @BeforeMethod

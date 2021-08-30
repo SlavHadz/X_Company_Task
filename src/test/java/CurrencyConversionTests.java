@@ -1,5 +1,6 @@
 import Selectors.ConversionPageSelectors;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -36,8 +37,8 @@ public class CurrencyConversionTests extends TestBase {
     @Test
     public void LossAmountTextBoxIsDisplayedWhenBankProviderExchangeAmountLowerThenPaysera() throws InterruptedException {
         currencyConversionPage.NavigateTo();
-        WebElement payseraAmountElement = _driver.findElement(ConversionPageSelectors.payseraAmountValue);
-        WebElement swedbankAmountElement = _driver.findElement(ConversionPageSelectors.swedbankAmountValue);
+        WebElement payseraAmountElement = _wait.until(ExpectedConditions.visibilityOfElementLocated(ConversionPageSelectors.payseraAmountValue));
+        WebElement swedbankAmountElement = _wait.until(ExpectedConditions.visibilityOfElementLocated(ConversionPageSelectors.swedbankAmountValue));
         BigDecimal payseraAmountValue = new BigDecimal(payseraAmountElement.getText());
         BigDecimal swedbankAmountValue = new BigDecimal(swedbankAmountElement.getText());
         if (payseraAmountValue.compareTo(swedbankAmountValue) == 1 ) {
